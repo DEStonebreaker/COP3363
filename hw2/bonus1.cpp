@@ -7,7 +7,7 @@ double distance(double x, double y){
     return sqrt(x*x + y*y);
 };
 
-void monte_carlo_pi(double n){
+void monte_carlo_pi(int n){
     double x, y, pi{0}; 
     int inside{0};
     
@@ -25,12 +25,12 @@ void monte_carlo_pi(double n){
 
     }
 
-    pi = (4 * inside) / n;
+    pi = (4 * inside) / static_cast<double>(n);
     cout << "Estimated pi = " << pi << endl;
 };
 
 int main(){
-    double n;
+    int n;
     cout << "Enter the number of Monte-Carlo samples: ";
     cin >> n;
 
